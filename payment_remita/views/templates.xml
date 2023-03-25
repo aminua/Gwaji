@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_remita_template" inherit_id="payment.payment_form_template">
+        <xpath expr="//button[@name='validate']" position="before">
+            <div t-if="o.acquirer_provider == 'remita'">
+                <input type="hidden" name="remita_txnid" t-att-value="tx.acquirer_reference"/>
+                <input type="hidden" name="remita_amount" t-att-value="tx.amount"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

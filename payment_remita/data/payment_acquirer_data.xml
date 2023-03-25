@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="payment_acquirer_remita" model="payment.acquirer">
+            <field name="name">Remita Payment Gateway</field>
+            <field name="provider">remita</field>
+            <field name="state">test</field>
+            <field name="website_published">True</field>
+            <field name="view_template_id" ref="payment.view_template_payment_acquirer"/>
+            <field name="fees_active">True</field>
+            <field name="remittance_journal_id" ref="account.data_account_journal_misc"/>
+            <field name="icon_url">/payment_remita/static/description/icon.png</field>
+            <field name="payment_flow">form</field>
+            <field name="payment_icon_ids" eval="[(0, 0, {
+                'name': 'Remita',
+                'res_name': 'Remita Payment Gateway',
+                'sequence': 1,
+                'font': 'fa',
+                'symbol': 'fa-credit-card',
+                'color': '#9b59b6',
+            })]"/>
+            <field name="website_button_text">Pay with Remita</field>
+        </record>
+
+        <record id="payment_icon_remita" model="ir.attachment">
+            <field name="name">Remita Payment Gateway</field>
+            <field name="datas_fname">icon.png</field>
+            <field name="datas" type="base64">/9j/4AAQSkZJRgABAQAAAQABAAD//gA+Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBkZWZhdWx0IHF1YWxpdHkK/9sAQwACAQEBAQECAQEBAgICAgIEAwICAgIFBAQDBAYFBgYGBQYGBgcJCAYHCQcGBggLCAkKCgoKCgYJCAoKC
